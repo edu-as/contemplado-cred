@@ -27,7 +27,12 @@ const TableComponent = () => {
       <Table>
         <TableHead>
           <TableRow>
-            
+            <TableCell><strong>Código</strong></TableCell>
+            <TableCell><strong>Crédito</strong></TableCell>
+            <TableCell><strong>Entrada</strong></TableCell>
+            <TableCell><strong>Parcelas</strong></TableCell>
+            <TableCell><strong>Fornecedor</strong></TableCell>
+            <TableCell><strong>Contato</strong></TableCell>
             {/* Adicione mais cabeçalhos conforme necessário */}
           </TableRow>
         </TableHead>
@@ -39,7 +44,18 @@ const TableComponent = () => {
                   {
                     // Verifica se o conteúdo é uma URL de imagem
                     cell.startsWith('http') && (cell.endsWith('.png') || cell.endsWith('.jpg') || cell.endsWith('.jpeg')) ? (
-                      <img src={cell} alt={`Imagem ${cellIndex}`} style={{ width: '50px', height: 'auto' }} />
+                      <img
+                        src={cell}
+                        alt={`Imagem ${cellIndex}`}
+                        style={{
+                          maxWidth: '50px',
+                          maxHeight: '50px',
+                          width: 'auto',
+                          height: 'auto',
+                          objectFit: 'contain',
+                          borderRadius: '4px' // Opcional: ajusta as bordas das imagens
+                        }}
+                      />
                     ) : (
                       cell
                     )
