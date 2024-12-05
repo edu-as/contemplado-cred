@@ -2,7 +2,7 @@ import puppeteer from 'puppeteer';
 import { writeFileSync, readFileSync, existsSync } from 'fs';
 import { WebSocketServer } from 'ws';
 
-const port = 8080;
+const port = 8081;
 const wss = new WebSocketServer({ port });
 
 // Função para fazer o scraping dos dados
@@ -77,7 +77,7 @@ async function monitorData() {
     }
 }
 
-// Monitora a cada 2 segundos (ajuste conforme necessário)
-setInterval(monitorData, 2000);
+// Monitora a cada 3 segundos (ajuste conforme necessário)
+setInterval(monitorData, 3000);
 
 console.log(`Servidor WebSocket iniciado na porta ${port}`);
